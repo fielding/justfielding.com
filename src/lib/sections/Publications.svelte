@@ -11,7 +11,7 @@
 		>
 			<p>
 				Yipeng Du, Zihao Wang, Ahmad Farhan, Fielding Johnston, et al. (2025). <em
-					>COLM 2025 Conference</em
+					>COLM 2025 Conference Submission.</em
 				>
 			</p>
 		</PublicationEntry>

@@ -15,7 +15,6 @@
 		margin-bottom: 1.5rem;
 	}
 
-	/* Using :global() because the <p> tag comes from the slot */
 	.citation :global(p) {
 		margin-bottom: 0.25rem;
 		font-size: 0.9rem;

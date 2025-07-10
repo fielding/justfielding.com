@@ -12,7 +12,6 @@
 
 	let isNightMode = false;
 	let timeline: gsap.core.Timeline;
-
 	let CanvasComponent: any = null;
 
 	// function handleToggle() {

@@ -200,7 +200,6 @@
 			options: configs
 		});
 
-		// Start in a paused state
 		particles.pause();
 
 		const handleResize = () => {
@@ -219,7 +218,6 @@
 		};
 	});
 
-	// Reactive statement: This code runs whenever the 'on' prop changes.
 	$: {
 		if (particles) {
 			if (on) {

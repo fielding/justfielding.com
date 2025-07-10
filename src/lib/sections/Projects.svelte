@@ -80,7 +80,7 @@
 
 		<div slot="artifacts">
 			<a href="https://youtu.be/a0_jNTkYNmA" target="_blank">→ Watch clips from development</a>
-			<a href="LORE_PDF_LINK" target="_blank">→ Read Project Lore</a>
+			<!-- <a href="LORE_PDF_LINK" target="_blank">→ Read Project Lore</a> -->
 		</div>
 	</ProjectEntry>
 	<ProjectEntry title="Redstone University">
