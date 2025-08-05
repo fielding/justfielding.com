@@ -95,7 +95,8 @@
 			practical grasp of low-level computing.
 		</p>
 		<div slot="artifacts">
-		    <a< href="https://github.com/fielding/redstone-university" target="_blank">→ View the Course</a>
+			<a href="https://github.com/fielding/redstone-university" target="_blank">→ View the Course</a
+			>
 		</div>
 	</ProjectEntry>
 </section>
