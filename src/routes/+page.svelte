@@ -44,10 +44,9 @@
 <main use:hoverGlitch>
 	<Header />
 	<About />
-	<Projects />
-	<Publications />
 	<Experience />
-
+	<Publications />
+	<Projects />
 	<GlitchEffect />
 
 	{#if isNightMode && CanvasComponent}
