@@ -2,11 +2,7 @@
 	import { randomGlitch } from '$lib/actions/glitch';
 </script>
 
-<h1>
-	<strong use:randomGlitch class="js-random-interval glitched">.</strong>
-	<span use:randomGlitch class="js-random-interval glitched">Fielding</span>
-	<strong use:randomGlitch class="js-random-interval glitched">.</strong>
-</h1>
+<h1><strong use:randomGlitch class="js-random-interval glitched">.</strong><span use:randomGlitch class="js-random-interval glitched">Fielding</span><strong use:randomGlitch class="js-random-interval glitched">.</strong></h1>
 
 <style>
 	h1 {

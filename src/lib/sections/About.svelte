@@ -11,7 +11,7 @@
 	</p>
 	<p>
 		This portfolio highlights my work, starting with my <strong>Professional Experience</strong>.
-		After that, check out my academic <strong>Publications</strong> and recent
+		After that, check out my academic <strong>Publications</strong>, recent
 		<strong>Projects</strong>.
 	</p>
 	<p>
@@ -24,18 +24,18 @@
 		<a
 			href="https://scholar.google.com/citations?user=UYuzeXwAAAAJ&hl=en"
 			target="_blank"
-			class="glitched"
+			class="glitched glitch-on-hover"
 			rel="noopener noreferrer">Google Scholar</a
 		>, connect on
 		<a
 			href="https://linkedin.com/in/fieldingjohnston"
-			class="glitched"
+			class="glitched glitch-on-hover"
 			target="_blank"
 			rel="noopener noreferrer">LinkedIn</a
-		>, or grab my <a href="/cv.pdf" class="glitched" target="_blank" rel="noopener noreferrer"
+		>, or grab my <a href="/cv.pdf" class="glitched glitch-on-hover" target="_blank" rel="noopener noreferrer"
 			>Resume</a
 		>. Want to work together, collaborate on shaping AI’s future, build something cool, or just
 		chat? Reach out at
-		<a class="glitched" href="mailto:hello@justfielding.com">hello@justfielding.com</a>.
+		<a class="glitched glitch-on-hover" href="mailto:hello@justfielding.com">hello@justfielding.com</a>.
 	</p>
 </section>
