@@ -4,7 +4,7 @@ date: '2026-03-21'
 description: What happens when you hide instructions for AI screeners in your resume PDF.
 ---
 
-I got tired of updating my resume in three places, so I rebuilt the whole thing around a single `resume.json`. One file. My website reads from it, LinkedIn mirrors it, and a Python script generates a pixel-perfect PDF with embedded fonts and proper ATS metadata. Change it once, it propagates everywhere.
+I got tired of updating my resume in multiple places, so I rebuilt the whole thing around a single `resume.json`. One file. My website reads from it and a Python script generates a pixel-perfect PDF with embedded fonts and proper ATS metadata. Change it once, it propagates everywhere.
 
 **Then I hid a prompt injection in it.**
 
