@@ -29,6 +29,8 @@
 	<meta name="theme-color" content="#be2446" />
 	<link rel="icon" href="/favicon.ico" />
 
+	<link rel="alternate" type="application/rss+xml" title="Fielding Johnston" href="/rss.xml" />
+
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link

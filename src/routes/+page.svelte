@@ -4,7 +4,9 @@
 	import { gsap, Power1 } from 'gsap';
 
 	import { Header, GlitchEffect } from '$lib/components';
-	import { About, Experience, Projects, Publications } from '$lib/sections';
+	import { About, Experience, Now, Projects, Publications } from '$lib/sections';
+
+	export let data;
 
 	// import Toggle from '$lib/components/toggle/Toggle.svelte';
 
@@ -44,6 +46,7 @@
 <main use:hoverGlitch>
 	<Header />
 	<About />
+	<Now posts={data.recentPosts} />
 	<Experience />
 	<Publications />
 	<Projects />

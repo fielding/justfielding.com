@@ -10,32 +10,30 @@
 		every day.
 	</p>
 	<p>
-		This portfolio highlights my work, starting with my <strong>Professional Experience</strong>.
-		After that, check out my academic <strong>Publications</strong>, recent
-		<strong>Projects</strong>.
+		See what I’m <a href="#now" class="glitched glitch-on-hover">building after hours</a>, or dig into my
+		<a href="#experience" class="glitched glitch-on-hover">experience</a>,
+		<a href="#publications" class="glitched glitch-on-hover">publications</a>, and
+		<a href="#projects" class="glitched glitch-on-hover">projects</a> below.
 	</p>
 	<p>
-		See my work on <a
+		Find me on <a
 			href="https://github.com/fielding"
 			target="_blank"
 			class="glitched glitch-on-hover"
 			rel="noopener noreferrer">GitHub</a
-		>, find my research on
-		<a
+		>, <a
 			href="https://scholar.google.com/citations?user=UYuzeXwAAAAJ&hl=en"
 			target="_blank"
 			class="glitched glitch-on-hover"
 			rel="noopener noreferrer">Google Scholar</a
-		>, connect on
-		<a
+		>, <a
 			href="https://linkedin.com/in/fieldingjohnston"
 			class="glitched glitch-on-hover"
 			target="_blank"
 			rel="noopener noreferrer">LinkedIn</a
 		>, or grab my <a href="/cv.pdf" class="glitched glitch-on-hover" target="_blank" rel="noopener noreferrer"
 			>Resume</a
-		>. Want to work together, collaborate on shaping AI’s future, build something cool, or just
-		chat? Reach out at
+		>. Want to work together, build something cool, or just chat? Reach out at
 		<a class="glitched glitch-on-hover" href="mailto:hello@justfielding.com">hello@justfielding.com</a>.
 	</p>
 </section>
