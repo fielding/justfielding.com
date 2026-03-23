@@ -1,0 +1,124 @@
+/* Prism.js Human++ theme
+ * Base24 color scheme for the post-artisanal coding era
+ * https://github.com/fielding/human-plus-plus
+ *
+ * Mapped from Human++ palette (palette.toml) quiet accents
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	background: #1a1c22;
+	color: #dbd6cc;
+	text-shadow: none;
+}
+
+/* Comments — cool gray, fades into background */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #5a5d62;
+	font-style: italic;
+}
+
+/* Punctuation */
+.token.punctuation {
+	color: #828079;
+}
+
+/* Keywords — quiet red */
+.token.keyword,
+.token.tag,
+.token.selector,
+.token.important {
+	color: #c8518f;
+}
+
+/* Strings — quiet lime */
+.token.string,
+.token.char,
+.token.template-string,
+.token.attr-value {
+	color: #d2fc91;
+}
+
+/* Functions — quiet blue */
+.token.function,
+.token.class-name {
+	color: #5e84b6;
+}
+
+/* Types, builtins — quiet cyan */
+.token.builtin,
+.token.type {
+	color: #91cbcd;
+}
+
+/* Numbers, booleans — quiet amber */
+.token.number,
+.token.boolean,
+.token.constant {
+	color: #dfb683;
+}
+
+/* Variables */
+.token.variable {
+	color: #dbd6cc;
+}
+
+/* Parameters — quiet purple */
+.token.parameter {
+	color: #8f72e3;
+	font-style: italic;
+}
+
+/* Properties, attributes — quiet cyan italic */
+.token.property,
+.token.attr-name {
+	color: #91cbcd;
+}
+
+/* Decorators, symbols — quiet orange */
+.token.symbol,
+.token.decorator,
+.token.annotation {
+	color: #d68c6f;
+}
+
+/* Operators */
+.token.operator,
+.token.entity,
+.token.url {
+	color: #828079;
+}
+
+/* Regex — quiet green */
+.token.regex {
+	color: #61b186;
+}
+
+/* Inserted — green tint */
+.token.inserted {
+	color: #61b186;
+	background-color: rgba(4, 179, 114, 0.1);
+}
+
+/* Deleted — pink tint */
+.token.deleted {
+	color: #c8518f;
+	background-color: rgba(231, 52, 156, 0.1);
+}
+
+/* Namespace dimming */
+.token.namespace {
+	opacity: 0.7;
+}
+
+/* Bold and italic */
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
