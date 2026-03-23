@@ -3,7 +3,7 @@
 </script>
 
 <section id="projects">
-	<SectionHeader>Projects</SectionHeader>
+	<SectionHeader id="projects">Projects</SectionHeader>
 	<ProjectEntry title="Yarrtzee: Dice of Dishonor" tags="">
 		<div slot="image">
 			<img src="/img/yarrtzee.png" alt="Yarrtzee logo" />
@@ -30,11 +30,11 @@
 		</p>
 
 		<div slot="artifacts">
-			<a href="https://fite.bet" target="_blank" rel="noopener noreferrer">→ Visit Fite.bet</a>
-			<a href="https://t.me/fitebattlebot" target="_blank" rel="noopener noreferrer"
-				>→ Add Telegram Bot</a
+			<a href="https://fite.bet" target="_blank" rel="noopener noreferrer" class="glitched glitch-on-hover">Visit Fite.bet</a>
+			<a href="https://t.me/fitebattlebot" target="_blank" rel="noopener noreferrer" class="glitched glitch-on-hover"
+				>Add Telegram Bot</a
 			>
-			<!-- <a href="GITHUB_LINK_HERE" target="_blank" rel="noopener noreferrer">→ View on GitHub</a> -->
+			<!-- <a href="GITHUB_LINK_HERE" target="_blank" rel="noopener noreferrer">View on GitHub</a> -->
 		</div>
 	</ProjectEntry>
 	<ProjectEntry title="Rock, Paper, Scissors">
@@ -49,8 +49,8 @@
 		</p>
 
 		<div slot="artifacts">
-			<a href="https://www.youtube.com/shorts/5-cjt3-Ow-E" target="_blank" rel="noopener noreferrer"
-				>→ See it in action</a
+			<a href="https://www.youtube.com/shorts/5-cjt3-Ow-E" target="_blank" rel="noopener noreferrer" class="glitched glitch-on-hover"
+				>See it in action</a
 			>
 		</div>
 	</ProjectEntry>
@@ -79,8 +79,8 @@
 		</p>
 
 		<div slot="artifacts">
-			<a href="https://youtu.be/a0_jNTkYNmA" target="_blank">→ Watch clips from development</a>
-			<a href="/LFM_3-80.pdf" target="_blank">→ Lunar Field Manual LFM 3-80</a>
+			<a href="https://youtu.be/a0_jNTkYNmA" target="_blank" class="glitched glitch-on-hover">Watch clips from development</a>
+			<a href="/LFM_3-80.pdf" target="_blank" class="glitched glitch-on-hover">Lunar Field Manual LFM 3-80</a>
 		</div>
 	</ProjectEntry>
 	<ProjectEntry title="Redstone University">
@@ -95,7 +95,7 @@
 			practical grasp of low-level computing.
 		</p>
 		<div slot="artifacts">
-			<a href="https://github.com/fielding/redstone-university" target="_blank">→ View the Course</a
+			<a href="https://github.com/fielding/redstone-university" target="_blank" class="glitched glitch-on-hover">View the Course</a
 			>
 		</div>
 	</ProjectEntry>

@@ -30,7 +30,7 @@
 		display: flex;
 		flex-direction: row;
 		gap: 2rem;
-		margin-bottom: 4rem;
+		margin-bottom: 3rem;
 	}
 
 	.media-column {
@@ -42,47 +42,34 @@
 	}
 
 	h3 {
-		font-family: 'Inconsolata', monospace;
+		font-family: 'Titillium Web', sans-serif;
 		font-size: 1.5rem;
-		font-weight: 700;
+		font-weight: 600;
 		margin: 0 0 0.75rem;
 	}
 
 	.description :global(p) {
 		margin-bottom: 1rem;
-		line-height: 1.6;
 	}
 
-	.artifacts-container {
-		margin-top: 1rem;
+	.artifacts-container :global(div) {
+		margin-top: 0.25rem;
 		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem 1rem;
+		flex-direction: column;
+		gap: 0.25rem;
 	}
 
 	:global(.artifacts-container a) {
 		display: inline-block;
 		font-size: 0.9rem;
 		font-weight: bold;
-		border-bottom-style: solid;
 		text-decoration: none;
 	}
 
-	:global(.tags-container .tag) {
-		display: inline-block;
-		font-size: 0.8rem;
-		font-family: 'Inconsolata', monospace;
-		background-color: #eee;
-		color: #555;
-		padding: 0.2rem 0.6rem;
-		border-radius: 4px;
-		user-select: none;
+	:global(.artifacts-container a::after) {
+		content: ' →';
 	}
 
-	body.dark :global(.tags-container .tag) {
-		background-color: #333;
-		color: #ccc;
-	}
 
 	@media (max-width: 600px) {
 		article {

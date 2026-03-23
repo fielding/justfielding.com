@@ -3,7 +3,7 @@
 </script>
 
 <section id="publications">
-	<SectionHeader>Publications</SectionHeader>
+	<SectionHeader id="publications">Publications</SectionHeader>
 	<ul>
 		<PublicationEntry
 			title="Meta-Learning for Speeding Up Large Model Inference in Decentralized Environments"

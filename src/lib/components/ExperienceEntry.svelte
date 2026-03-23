@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { TagList } from '$lib/components';
 	export let title: string;
 	export let company: string;
 	export let dates: string;
-	export let skills: string;
 </script>
 
 <article>
@@ -12,7 +10,6 @@
 	<div class="description">
 		<slot />
 	</div>
-	<TagList tags={skills} />
 </article>
 
 <style>

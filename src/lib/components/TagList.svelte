@@ -5,8 +5,8 @@
 </script>
 
 <div class="tags-container">
-	{#each tagArray as tag}
-		<span class="tag">{tag}</span>
+	{#each tagArray as tag, i}
+		{#if i > 0}<span class="sep">·</span>{/if}<span class="tag">{tag}</span>
 	{/each}
 </div>
 
@@ -15,23 +15,25 @@
 		margin-top: 1.25rem;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.5rem;
+		align-items: center;
+		gap: 0.25rem;
 	}
 
 	.tag {
-		display: inline-block;
 		font-size: 0.8rem;
 		font-family: 'Inconsolata', monospace;
-		background-color: #eee;
-		color: #555;
-		padding: 0.2rem 0.6rem;
-		border-radius: 4px;
+		color: var(--subtle-text-light);
 		user-select: none;
 		line-height: 1.5;
 	}
 
+	.sep {
+		color: var(--accent-red);
+		font-weight: bold;
+		font-size: 0.9rem;
+	}
+
 	body.dark .tag {
-		background-color: #333;
-		color: #ccc;
+		color: var(--subtle-text-dark);
 	}
 </style>

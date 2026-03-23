@@ -4,7 +4,7 @@
 </script>
 
 <li>
-	<a {href} target="_blank" rel="noopener noreferrer">{title}</a>
+	<a {href} target="_blank" rel="noopener noreferrer" class="glitched glitch-on-hover">{title}</a>
 	<div class="citation">
 		<slot />
 	</div>
