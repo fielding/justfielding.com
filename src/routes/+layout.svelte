@@ -18,7 +18,7 @@
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://justfielding.com" />
-	<!-- <meta property="og:image" content="https://justfielding.com/og-image.png" /> -->
+	<meta property="og:image" content="https://justfielding.com/android-chrome-512x512.png" />
 
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
