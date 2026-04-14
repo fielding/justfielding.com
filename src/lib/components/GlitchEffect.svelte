@@ -23,6 +23,9 @@
 		width: 1px;
 		height: 1px;
 	}
+	/* Transparent outline gives the SVG displacement filter bleed-room so the
+	   glitch effect isn't clipped at the glyph edge. !important locks it against
+	   focus-visible overrides. */
 	:global(.glitched) {
 		-webkit-transition: background-color 0.1s ease-out;
 		-moz-transition: background-color 0.1s ease-out;

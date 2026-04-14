@@ -55,4 +55,13 @@
 	.section.active {
 		font-weight: 700;
 	}
+
+	/* Dark-mode display crispness: drop weight + stroke edges with bg color. */
+	@media (prefers-color-scheme: dark) {
+		.site-name,
+		.site-name strong {
+			font-weight: 800;
+			-webkit-text-stroke: 0.25px var(--background);
+		}
+	}
 </style>

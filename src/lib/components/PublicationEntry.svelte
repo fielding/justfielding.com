@@ -18,6 +18,6 @@
 	.citation :global(p) {
 		margin-bottom: 0.25rem;
 		font-size: 0.9rem;
-		opacity: 0.7;
+		color: var(--subtle-text);
 	}
 </style>
