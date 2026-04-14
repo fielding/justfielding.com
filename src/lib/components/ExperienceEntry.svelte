@@ -56,7 +56,8 @@
 
 	.description .role {
 		font-family: 'Inconsolata', monospace;
-		font-weight: 600;
+		font-size: 1.15rem;
+		font-weight: 700;
 		color: inherit;
 		margin-bottom: 0.5rem;
 	}
@@ -85,7 +86,7 @@
 		margin-right: 0.75em;
 		display: inline-flex;
 		transform: translateY(-0.05em);
-		font-size: 8px;
+		font-size: 0.5rem;
 		width: 1.5em;
 		flex-shrink: 0;
 		align-self: baseline;
