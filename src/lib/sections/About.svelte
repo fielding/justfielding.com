@@ -10,10 +10,8 @@
 		every day.
 	</p>
 	<p>
-		See what I’m <a href="#now" class="glitched glitch-on-hover">building after hours</a>, or dig into my
-		<a href="#experience" class="glitched glitch-on-hover">experience</a>,
-		<a href="#publications" class="glitched glitch-on-hover">publications</a>, and
-		<a href="#projects" class="glitched glitch-on-hover">projects</a> below.
+		See what I’m building after hours, or dig into my experience, publications, and projects
+		below.
 	</p>
 	<p>
 		Find me on <a
