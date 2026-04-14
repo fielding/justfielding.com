@@ -1,19 +1,9 @@
-const posts = import.meta.glob('/src/posts/*.md', { eager: true });
+import { getAllPosts } from '$lib/posts';
 
 export const prerender = true;
 
 export async function GET() {
-	const items = Object.entries(posts)
-		.map(([path, post]: [string, any]) => {
-			const slug = path.split('/').pop()?.replace('.md', '') ?? '';
-			return {
-				slug,
-				title: post.metadata?.title ?? slug,
-				date: post.metadata?.date ?? '',
-				description: post.metadata?.description ?? ''
-			};
-		})
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	const items = getAllPosts();
 
 	const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

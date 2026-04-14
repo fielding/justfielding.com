@@ -1,24 +1,21 @@
 import { error } from '@sveltejs/kit';
-
-const posts = import.meta.glob('/src/posts/*.md', { eager: true });
+import { getAllPosts, getPostBySlug } from '$lib/posts';
 
 export function entries() {
-	return Object.keys(posts).map((path) => ({
-		slug: path.split('/').pop()?.replace('.md', '') ?? ''
-	}));
+	return getAllPosts().map((p) => ({ slug: p.slug }));
 }
 
 export async function load({ params }) {
-	const path = `/src/posts/${params.slug}.md`;
-	const post = posts[path] as any;
-
+	const post = getPostBySlug(params.slug);
 	if (!post) {
 		throw error(404, `Post not found: ${params.slug}`);
 	}
-
 	return {
-		content: post.default,
+		content: post.content,
 		metadata: post.metadata,
+		meta: post.meta,
+		prev: post.prev,
+		next: post.next,
 		slug: params.slug
 	};
 }
