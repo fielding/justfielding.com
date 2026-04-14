@@ -1,5 +1,6 @@
 <script>
 	import SectionHeader from '$lib/components/SectionHeader.svelte';
+	import { formatDate } from '$lib/posts';
 
 	export let posts = [];
 </script>
@@ -34,23 +35,25 @@
 		{#each posts as post}
 			<p class="post-link">
 				<a href="/blog/{post.slug}" class="glitched glitch-on-hover">{post.title}</a>
-				<span class="post-date">{post.date}</span>
+				<span class="post-date"
+					>{formatDate(post.date)}<span class="sep">·</span>{post.readingTime} min read</span
+				>
 			</p>
 		{/each}
-		<p class="all-posts"><a href="/blog" class="glitched glitch-on-hover">all posts &rarr;</a></p>
+		<p class="all-posts"><a href="/blog" class="glitched glitch-on-hover">all posts</a></p>
 	{/if}
 </section>
 
 <style>
-	.updated {
-		font-size: 0.8rem;
-		color: var(--subtle-text-light);
-		margin-top: -1.5rem;
-		margin-bottom: 1.5rem;
+	:global(#now > h2) {
+		margin-bottom: 0.25rem;
 	}
 
-	:global(body.dark) .updated {
-		color: var(--subtle-text-dark);
+	.updated {
+		font-size: 0.8rem;
+		color: var(--subtle-text);
+		margin-top: 0;
+		margin-bottom: 1.75rem;
 	}
 
 	h3 {
@@ -65,12 +68,14 @@
 
 	.post-date {
 		font-size: 0.8rem;
-		color: var(--subtle-text-light);
+		color: var(--subtle-text);
 		margin-left: 0.4rem;
 	}
 
-	:global(body.dark) .post-date {
-		color: var(--subtle-text-dark);
+	.post-date .sep {
+		color: var(--accent);
+		margin: 0 0.4em;
+		font-weight: bold;
 	}
 
 	.all-posts {

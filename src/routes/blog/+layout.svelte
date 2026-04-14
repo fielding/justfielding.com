@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { hoverGlitch } from '$lib/actions/glitch';
 	import { GlitchEffect } from '$lib/components';
 </script>
@@ -7,7 +8,11 @@
 <nav>
 	<a href="/" class="site-name glitched glitch-on-hover"><strong>.</strong>Fielding<strong>.</strong></a>
 	<span class="sep">/</span>
-	<a href="/blog" class="section glitched glitch-on-hover">blog</a>
+	<a
+		href="/blog"
+		class="section glitched glitch-on-hover"
+		class:active={$page.url.pathname === '/blog'}
+	>blog</a>
 </nav>
 
 <slot />
@@ -27,31 +32,27 @@
 		font-size: 1.6rem;
 		font-weight: 900;
 		text-decoration: none;
-		color: var(--text-light);
-	}
-
-	:global(body.dark) .site-name {
-		color: var(--text-dark);
+		color: var(--text);
 	}
 
 	.site-name strong {
-		color: var(--accent-red);
+		color: var(--accent);
 		font-weight: 900;
 	}
 
 	.sep {
-		color: var(--subtle-text-light);
+		color: var(--subtle-text);
 		font-weight: 300;
 		font-size: 1.4rem;
-	}
-
-	:global(body.dark) .sep {
-		color: var(--subtle-text-dark);
 	}
 
 	.section {
 		font-size: 1.4rem;
 		font-weight: 300;
 		text-decoration: none;
+	}
+
+	.section.active {
+		font-weight: 700;
 	}
 </style>

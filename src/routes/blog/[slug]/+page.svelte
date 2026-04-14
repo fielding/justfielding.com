@@ -1,29 +1,48 @@
 <script lang="ts">
 	import '$lib/styles/prism-human-plus-plus.css';
+	import { formatDate } from '$lib/posts';
 	export let data;
 </script>
 
 <svelte:head>
-	<title>{data.metadata.title} - Fielding Johnston</title>
-	<meta name="description" content={data.metadata.description} />
-	<meta property="og:title" content={data.metadata.title} />
-	<meta property="og:description" content={data.metadata.description} />
+	<title>{data.meta.title} - Fielding Johnston</title>
+	<meta name="description" content={data.meta.description} />
+	<meta property="og:title" content={data.meta.title} />
+	<meta property="og:description" content={data.meta.description} />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="https://justfielding.com/blog/{data.slug}" />
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content={data.metadata.title} />
-	<meta name="twitter:description" content={data.metadata.description} />
+	<meta name="twitter:title" content={data.meta.title} />
+	<meta name="twitter:description" content={data.meta.description} />
 </svelte:head>
 
 <article>
 	<header>
-		<h2>{data.metadata.title}</h2>
-		<span class="meta">{data.metadata.date}</span>
+		<h1>{data.meta.title}</h1>
+		<p class="meta">
+			<span>{formatDate(data.meta.date)}</span><span class="sep">·</span><span
+				>{data.meta.readingTime} min read</span
+			>
+		</p>
 	</header>
 
 	<div class="content">
 		<svelte:component this={data.content} />
 	</div>
+
+	<nav class="post-nav">
+		{#if data.prev}
+			<a href="/blog/{data.prev.slug}" class="prev glitched glitch-on-hover"
+				>← {data.prev.title}</a
+			>
+		{/if}
+		<a href="/blog" class="all glitched glitch-on-hover">all posts</a>
+		{#if data.next}
+			<a href="/blog/{data.next.slug}" class="next glitched glitch-on-hover"
+				>{data.next.title} →</a
+			>
+		{/if}
+	</nav>
 </article>
 
 <style>
@@ -31,25 +50,75 @@
 		margin-bottom: 2.5rem;
 	}
 
-	h2 {
+	h1 {
 		font-family: 'Titillium Web', sans-serif;
-		font-weight: 600;
-		font-size: 1.8rem;
+		font-weight: 700;
+		font-size: clamp(2rem, 6vw, 3rem);
 		margin-bottom: 0.5rem;
 		border: none;
-		line-height: 1.25;
+		line-height: 1.15;
 	}
 
 	.meta {
 		display: block;
 		font-family: 'Inconsolata', monospace;
-		color: var(--subtle-text-light);
+		color: var(--subtle-text);
 		font-size: 0.85rem;
 		letter-spacing: 0.02em;
+		margin: 0;
 	}
 
-	:global(body.dark) .meta {
-		color: var(--subtle-text-dark);
+	.sep {
+		color: var(--accent);
+		margin: 0 0.4em;
+		font-weight: bold;
+	}
+
+	.post-nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1rem;
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid color-mix(in oklch, var(--subtle-text) 40%, transparent);
+		font-family: 'Inconsolata', monospace;
+		font-size: 0.9rem;
+	}
+
+	.post-nav a {
+		max-width: 40ch;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.post-nav .prev {
+		text-align: left;
+	}
+
+	.post-nav .all {
+		text-align: center;
+		flex-shrink: 0;
+	}
+
+	.post-nav .next {
+		text-align: right;
+		margin-left: auto;
+	}
+
+	@media (max-width: 600px) {
+		.post-nav {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.75rem;
+		}
+
+		.post-nav a {
+			max-width: 100%;
+			text-align: left;
+			margin-left: 0;
+		}
 	}
 
 	.content {
@@ -57,15 +126,15 @@
 	}
 
 	.content :global(h2) {
-		font-size: 1.3rem;
-		font-weight: 600;
+		font-size: 1.5rem;
+		font-weight: 700;
 		margin-top: 2rem;
 		border: none;
 	}
 
 	.content :global(h3) {
-		font-size: 1.1rem;
-		font-weight: 600;
+		font-size: 1.2rem;
+		font-weight: 700;
 		margin-top: 1.5rem;
 		border: none;
 	}
@@ -74,26 +143,20 @@
 		background: #1a1c22;
 		color: #dbd6cc;
 		padding: 1rem;
-		border-radius: 4px;
 		overflow-x: auto;
 		font-family: 'Inconsolata', monospace;
 		font-size: 0.9rem;
 		margin: 1.5rem 0;
-		border-top: 2px solid var(--accent-red);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		border-top: 2px solid var(--accent);
 	}
 
 	.content :global(code) {
 		font-family: 'Inconsolata', monospace;
 		font-size: 0.88em;
-		background: rgba(0, 0, 0, 0.06);
-		color: var(--accent-red);
+		background: color-mix(in oklch, var(--text) 8%, transparent);
+		color: var(--accent);
 		padding: 0.15rem 0.4rem;
 		border-radius: 3px;
-	}
-
-	:global(body.dark) .content :global(code) {
-		background: rgba(255, 255, 255, 0.1);
 	}
 
 	.content :global(pre code) {
@@ -131,7 +194,7 @@
 
 	.content :global(ul > li::before) {
 		content: '■';
-		color: var(--accent-red);
+		color: var(--accent);
 		font-size: 8px;
 		position: absolute;
 		left: 0;
@@ -150,7 +213,7 @@
 	}
 
 	.content :global(thead) {
-		border-bottom: 2px solid var(--accent-red);
+		border-bottom: 2px solid var(--accent);
 	}
 
 	.content :global(th) {
@@ -162,11 +225,7 @@
 
 	.content :global(td) {
 		padding: 0.4rem 0.75rem;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-	}
-
-	:global(body.dark) .content :global(td) {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+		border-bottom: 1px solid color-mix(in oklch, var(--text) 8%, transparent);
 	}
 
 	.content :global(tr:last-child td) {
@@ -180,27 +239,15 @@
 	.content :global(hr) {
 		border: none;
 		height: 1px;
-		background: rgba(0, 0, 0, 0.1);
+		background: color-mix(in oklch, var(--text) 10%, transparent);
 		margin: 2rem 0;
 	}
 
-	:global(body.dark) .content :global(hr) {
-		background: rgba(255, 255, 255, 0.1);
-	}
-
 	.content :global(blockquote) {
-		border-left: 3px solid var(--accent-red);
-		margin-left: 0;
-		padding: 1rem 1.25rem;
-		background: rgba(0, 0, 0, 0.03);
-		border-radius: 0 4px 4px 0;
+		border-left: 3px solid var(--accent);
+		margin-left: 1.5rem;
+		padding: 0 1.25rem;
 		font-style: italic;
-		color: var(--subtle-text-light);
-	}
-
-	:global(body.dark) .content :global(blockquote) {
-		background: rgba(255, 255, 255, 0.04);
-		color: var(--subtle-text-dark);
 	}
 
 	.content :global(blockquote p:last-child) {
