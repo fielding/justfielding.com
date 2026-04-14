@@ -42,9 +42,6 @@
 	}
 
 	h3 {
-		font-family: 'Titillium Web', sans-serif;
-		font-size: 1.5rem;
-		font-weight: 600;
 		margin: 0 0 0.75rem;
 	}
 
@@ -66,9 +63,6 @@
 		text-decoration: none;
 	}
 
-	:global(.artifacts-container a::after) {
-		content: ' →';
-	}
 
 
 	@media (max-width: 600px) {

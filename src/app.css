@@ -1,11 +1,31 @@
+/*
+ * Breakpoints (kept literal since CSS custom properties can't be used inside @media):
+ *   480px — type-scale threshold. Root font-size bumps from 125% (20px) to 16px below this.
+ *   600px — layout-collapse threshold. Two-column components stack; container gutter tightens.
+ */
+
 :root {
-	--background-light: #fafafa;
-	--text-light: #1b1a19;
-	--background-dark: #131417;
-	--text-dark: #fafafa;
-	--accent-red: rgba(190, 36, 70, 1);
-	--subtle-text-light: #6b7280;
-	--subtle-text-dark: #9ca3af;
+	color-scheme: light dark;
+
+	--background: #fafafa;
+	--text: #1b1a19;
+	--subtle-text: #6b7280;
+	--accent: #c92873;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #131417;
+		--text: #fafafa;
+		--subtle-text: #9ca3af;
+		--accent: #e7349c;
+	}
+
+	/* Force grayscale antialiasing on macOS so light-on-dark doesn't render chunky. */
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 }
 
 html {
@@ -208,7 +228,7 @@ html {
 	box-sizing: inherit;
 }
 body {
-	color: #1b1a19;
+	color: var(--text);
 	font-family: 'Inconsolata', monospace;
 	font-weight: normal;
 	word-wrap: break-word;
@@ -241,7 +261,7 @@ h1 {
 	color: inherit;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: bold;
-	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
 	font-size: 4rem;
 	line-height: 1.1;
 }
@@ -257,7 +277,7 @@ h2 {
 	color: inherit;
 	font-family: 'Titillium Web', sans-serif;
 	font-weight: bold;
-	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
 	font-size: 2.2974rem;
 	line-height: 1.1;
 }
@@ -272,9 +292,9 @@ h3 {
 	margin-bottom: 1.45rem;
 	color: inherit;
 	font-family: 'Titillium Web', sans-serif;
-	font-weight: bold;
+	font-weight: 700;
 	text-rendering: optimizeLegibility;
-	font-size: 1.7411rem;
+	font-size: clamp(1.2rem, 3.75vw, 1.5rem);
 	line-height: 1.1;
 }
 h4 {
@@ -598,26 +618,22 @@ td:last-child {
 
 ::selection {
 	color: white;
-	background: rgba(190, 36, 70, 1);
+	background: var(--accent);
 }
 ::-moz-selection {
 	color: white;
-	background: rgba(190, 36, 70, 1);
+	background: var(--accent);
 }
 html {
 	overflow-y: auto;
 }
 body {
-	background: #fafafa;
-	margin: 0 36px;
-	transition: all 0.2s ease-in-out;
-}
-body.night {
-	background: #131417;
-	color: #fafafa;
+	background: var(--background);
+	margin: 0 clamp(16px, 4vw, 36px);
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 a {
-	color: rgba(190, 36, 70, 1);
+	color: var(--accent);
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
 	border: none;

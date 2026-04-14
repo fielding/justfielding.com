@@ -85,7 +85,13 @@
 	</ProjectEntry>
 	<ProjectEntry title="Redstone University">
 		<div slot="image">
-			<img src="/img/redstone-university.png" alt="Redstone University logo" />
+			<picture>
+				<source
+					media="(prefers-color-scheme: dark)"
+					srcset="/img/redstone-university-dark.png"
+				/>
+				<img src="/img/redstone-university.png" alt="Redstone University logo" />
+			</picture>
 		</div>
 
 		<p>

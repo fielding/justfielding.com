@@ -22,18 +22,14 @@
 	.tag {
 		font-size: 0.8rem;
 		font-family: 'Inconsolata', monospace;
-		color: var(--subtle-text-light);
+		color: var(--subtle-text);
 		user-select: none;
 		line-height: 1.5;
 	}
 
 	.sep {
-		color: var(--accent-red);
+		color: var(--accent);
 		font-weight: bold;
 		font-size: 0.9rem;
-	}
-
-	body.dark .tag {
-		color: var(--subtle-text-dark);
 	}
 </style>

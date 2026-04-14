@@ -3,7 +3,7 @@
 </script>
 
 {#if id}
-	<h2 id={id}>
+	<h2>
 		<a href="#{id}" class="header-link">
 			<span class="accent">.</span><slot /><span class="accent">.</span>
 		</a>
@@ -17,15 +17,16 @@
 <style>
 	h2 {
 		font-weight: 900;
+		font-size: clamp(1.6rem, 5.5vw, 2.2974rem);
 		white-space: nowrap;
 
 		margin: 3.5rem 0 2rem;
-		border-bottom: 2px solid rgba(190, 36, 70, 1);
+		border-bottom: 2px solid var(--accent);
 	}
 
 	.accent {
 		font-weight: 900;
-		color: rgba(190, 36, 70, 1);
+		color: var(--accent);
 	}
 
 	.header-link {
@@ -34,9 +35,19 @@
 		font-weight: inherit;
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 480px) {
 		h2 {
-			font-size: 1.8rem;
+			white-space: normal;
+			text-wrap: balance;
+		}
+	}
+
+	/* Dark-mode display crispness: drop weight + stroke edges with bg color. */
+	@media (prefers-color-scheme: dark) {
+		h2,
+		.accent {
+			font-weight: 800;
+			-webkit-text-stroke: 0.25px var(--background);
 		}
 	}
 </style>
