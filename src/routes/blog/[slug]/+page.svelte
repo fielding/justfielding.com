@@ -81,7 +81,7 @@
 		gap: 1rem;
 		margin-top: 3rem;
 		padding-top: 1.5rem;
-		border-top: 1px solid color-mix(in oklch, var(--subtle-text) 40%, transparent);
+		border-top: 1px solid color-mix(in oklch, var(--subtle-text) 50%, transparent);
 		font-family: 'Inconsolata', monospace;
 		font-size: 0.9rem;
 	}
@@ -123,6 +123,7 @@
 
 	.content {
 		margin-bottom: 3rem;
+		line-height: 1.55;
 	}
 
 	.content :global(h2) {
@@ -147,14 +148,12 @@
 		font-family: 'Inconsolata', monospace;
 		font-size: 0.9rem;
 		margin: 1.5rem 0;
-		border-top: 2px solid var(--accent);
 	}
 
 	.content :global(code) {
 		font-family: 'Inconsolata', monospace;
 		font-size: 0.88em;
 		background: color-mix(in oklch, var(--text) 8%, transparent);
-		color: var(--accent);
 		padding: 0.15rem 0.4rem;
 		border-radius: 3px;
 	}
