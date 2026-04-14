@@ -1,5 +1,9 @@
 import { gsap } from 'gsap';
 
+const prefersReducedMotion = () =>
+	typeof window !== 'undefined' &&
+	window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function getGlitchTimeline(el: HTMLElement) {
 	const turb = document.querySelector('#filter-glitch feTurbulence');
 	const disp = document.querySelector('#filter-glitch feDisplacementMap');
@@ -26,6 +30,8 @@ function getGlitchTimeline(el: HTMLElement) {
 	return Tl;
 }
 export function randomGlitch(node: HTMLElement) {
+	if (prefersReducedMotion()) return;
+
 	const timeline = getGlitchTimeline(node);
 	if (!timeline) return;
 
@@ -44,6 +50,8 @@ export function randomGlitch(node: HTMLElement) {
 }
 
 export function hoverGlitch(node: HTMLElement) {
+	if (prefersReducedMotion()) return;
+
 	const timelineCache = new WeakMap<HTMLElement, gsap.core.Timeline>();
 
 	const handleMouseOver = (event: MouseEvent) => {

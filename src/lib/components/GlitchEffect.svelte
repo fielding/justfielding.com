@@ -30,7 +30,10 @@
 		transform: translateZ(0);
 		outline: 90px solid transparent !important;
 	}
-	:global(.glitched:focus) {
-		outline: none;
+	:global(.glitched:focus-visible) {
+		text-decoration: underline;
+		text-decoration-color: var(--accent);
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
 	}
 </style>
