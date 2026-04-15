@@ -30,13 +30,14 @@
 		<svelte:component this={data.content} />
 	</div>
 
+	<p class="signoff">{data.meta.wordCount.toLocaleString()} words · fielding</p>
+
 	<nav class="post-nav">
 		{#if data.prev}
 			<a href="/blog/{data.prev.slug}" class="prev glitched glitch-on-hover"
 				>← {data.prev.title}</a
 			>
 		{/if}
-		<a href="/blog" class="all glitched glitch-on-hover">all posts</a>
 		{#if data.next}
 			<a href="/blog/{data.next.slug}" class="next glitched glitch-on-hover"
 				>{data.next.title} →</a
@@ -77,29 +78,32 @@
 	.post-nav {
 		display: flex;
 		justify-content: space-between;
-		align-items: baseline;
+		align-items: flex-start;
 		gap: 1rem;
 		margin-top: 3rem;
 		padding-top: 1.5rem;
 		border-top: 1px solid color-mix(in oklch, var(--subtle-text) 50%, transparent);
 		font-family: 'Inconsolata', monospace;
 		font-size: 0.9rem;
+		line-height: 1.35;
 	}
 
 	.post-nav a {
 		max-width: 40ch;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+	}
+
+	.signoff {
+		font-family: 'Inconsolata', monospace;
+		color: var(--subtle-text);
+		font-size: 0.8rem;
+		text-align: right;
+		letter-spacing: 0.02em;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	.post-nav .prev {
 		text-align: left;
-	}
-
-	.post-nav .all {
-		text-align: center;
-		flex-shrink: 0;
 	}
 
 	.post-nav .next {
