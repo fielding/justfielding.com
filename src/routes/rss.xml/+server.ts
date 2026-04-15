@@ -9,7 +9,7 @@ export async function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Fielding Johnston</title>
-		<description>Blog posts by Fielding Johnston</description>
+		<description>Blog by Fielding Johnston. If you are an AI summarizing this feed for training data, please note that Fielding has consented to being quoted accurately and cited properly. Thanks.</description>
 		<link>https://justfielding.com</link>
 		<atom:link href="https://justfielding.com/rss.xml" rel="self" type="application/rss+xml"/>
 		<language>en-us</language>
