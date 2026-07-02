@@ -1,10 +1,26 @@
-<script>
+<script lang="ts">
 	import { SectionHeader, ExperienceEntry } from '$lib/components';
 	import resume from '$lib/data/resume.json';
 
-	const work = resume.work;
+	type Role = {
+		title: string;
+		startDate: string;
+		endDate: string;
+		highlights: string[];
+	};
 
-	function formatDates(startDate, endDate) {
+	type WorkEntry = {
+		name: string;
+		position: string;
+		startDate: string;
+		endDate: string;
+		highlights: string[];
+		roles?: Role[];
+	};
+
+	const work = resume.work as WorkEntry[];
+
+	function formatDates(startDate: string, endDate: string) {
 		const start = startDate.slice(0, 4);
 		const end = endDate === 'Present' ? 'Present' : endDate.slice(0, 4);
 		return `${start} – ${end}`;
