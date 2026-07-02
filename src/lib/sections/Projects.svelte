@@ -30,9 +30,17 @@
 		</p>
 
 		<div slot="artifacts">
-			<a href="https://fite.bet" target="_blank" rel="noopener noreferrer" class="glitched glitch-on-hover">Visit Fite.bet</a>
-			<a href="https://t.me/fitebattlebot" target="_blank" rel="noopener noreferrer" class="glitched glitch-on-hover"
-				>Add Telegram Bot</a
+			<a
+				href="https://fite.bet"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="glitched glitch-on-hover">Visit Fite.bet</a
+			>
+			<a
+				href="https://t.me/fitebattlebot"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="glitched glitch-on-hover">Add Telegram Bot</a
 			>
 			<!-- <a href="GITHUB_LINK_HERE" target="_blank" rel="noopener noreferrer">View on GitHub</a> -->
 		</div>
@@ -49,14 +57,17 @@
 		</p>
 
 		<div slot="artifacts">
-			<a href="https://www.youtube.com/shorts/5-cjt3-Ow-E" target="_blank" rel="noopener noreferrer" class="glitched glitch-on-hover"
-				>See it in action</a
+			<a
+				href="https://www.youtube.com/shorts/5-cjt3-Ow-E"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="glitched glitch-on-hover">See it in action</a
 			>
 		</div>
 	</ProjectEntry>
 	<ProjectEntry title="Zuck Hunt / Zuck's Revenge">
 		<div slot="image">
-			<img src="/img/zuckhunt.png" alt="Zuck Hunt promotional image" />
+			<img src="/img/zuckhunt.png" alt="Zuck Hunt promotional art" />
 		</div>
 
 		<p>
@@ -79,17 +90,18 @@
 		</p>
 
 		<div slot="artifacts">
-			<a href="https://youtu.be/a0_jNTkYNmA" target="_blank" class="glitched glitch-on-hover">Watch clips from development</a>
-			<a href="/LFM_3-80.pdf" target="_blank" class="glitched glitch-on-hover">Lunar Field Manual LFM 3-80</a>
+			<a href="https://youtu.be/a0_jNTkYNmA" target="_blank" class="glitched glitch-on-hover"
+				>Watch clips from development</a
+			>
+			<a href="/LFM_3-80.pdf" target="_blank" class="glitched glitch-on-hover"
+				>Lunar Field Manual LFM 3-80</a
+			>
 		</div>
 	</ProjectEntry>
 	<ProjectEntry title="Redstone University">
 		<div slot="image">
 			<picture>
-				<source
-					media="(prefers-color-scheme: dark)"
-					srcset="/img/redstone-university-dark.png"
-				/>
+				<source media="(prefers-color-scheme: dark)" srcset="/img/redstone-university-dark.png" />
 				<img src="/img/redstone-university.png" alt="Redstone University logo" />
 			</picture>
 		</div>
@@ -101,7 +113,10 @@
 			practical grasp of low-level computing.
 		</p>
 		<div slot="artifacts">
-			<a href="https://github.com/fielding/redstone-university" target="_blank" class="glitched glitch-on-hover">View the Course</a
+			<a
+				href="https://github.com/fielding/redstone-university"
+				target="_blank"
+				class="glitched glitch-on-hover">View the Course</a
 			>
 		</div>
 	</ProjectEntry>
