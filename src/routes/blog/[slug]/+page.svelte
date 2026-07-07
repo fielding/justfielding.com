@@ -183,8 +183,29 @@
 
 	.content :global(.figure-plate) {
 		background: #f5f1ea;
-		border-radius: 8px;
+		border: 3px solid #30231e;
+		border-radius: 0;
 		padding: 1.25rem;
+	}
+
+	/* The hero figure is the one bold moment: a hard, zero-blur offset shadow in
+	   the site accent (themed, so it reads on both the light and dark ground). */
+	.content :global(.figure-plate.hero) {
+		box-shadow: 6px 6px 0 var(--accent);
+	}
+
+	/* Source sticker, course ink block with parchment text, in the site mono.
+	   Names the plate as a print from the course rather than a stray background. */
+	.content :global(.figure-plate .plate-source) {
+		display: inline-block;
+		background: #30231e;
+		color: #f5f1ea;
+		font-family: 'Inconsolata', monospace;
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+		font-size: 0.62rem;
+		padding: 0.3rem 0.55rem;
+		margin-bottom: 0.9rem;
 	}
 
 	.content :global(.figure-plate img) {
