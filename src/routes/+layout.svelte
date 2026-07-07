@@ -7,23 +7,32 @@
 	<title>Fielding Johnston - Software Engineer</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta
-		name="description"
-		content="The portfolio of Fielding Johnston, a software engineer with expertise in AI, distributed systems, and interactive applications."
-	/>
 
-	<meta property="og:title" content="Fielding Johnston - Software Engineer" />
-	<meta
-		property="og:description"
-		content="The portfolio of Fielding Johnston, a software engineer with expertise in AI, distributed systems, and interactive applications."
-	/>
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://justfielding.com" />
-	<!-- Pages that supply their own social image (blog posts with `image`
-	     frontmatter) win; scrapers take the first og:image they see. -->
+	<!-- Site-wide defaults render ONLY when the page doesn't bring its own
+	     meta. Scrapers take the FIRST tag of each kind they see, and the
+	     layout's head renders before the page's: an unconditional og:url here
+	     once made LinkedIn attribute every post to the homepage's (stale)
+	     share record. -->
+	{#if !$page.data?.meta}
+		<meta
+			name="description"
+			content="The portfolio of Fielding Johnston, a software engineer with expertise in AI, distributed systems, and interactive applications."
+		/>
+		<meta property="og:title" content="Fielding Johnston - Software Engineer" />
+		<meta
+			property="og:description"
+			content="The portfolio of Fielding Johnston, a software engineer with expertise in AI, distributed systems, and interactive applications."
+		/>
+		<meta property="og:type" content="website" />
+	{/if}
 	{#if !$page.data?.meta?.image}
 		<meta property="og:image" content="https://justfielding.com/android-chrome-512x512.png" />
 	{/if}
+	<link rel="canonical" href="https://justfielding.com{$page.url.pathname}" />
+	<meta property="og:url" content="https://justfielding.com{$page.url.pathname}" />
+	<meta property="og:site_name" content="justfielding.com" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:logo" content="https://justfielding.com/android-chrome-512x512.png" />
 
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

@@ -2,17 +2,35 @@
 	import '$lib/styles/prism-human-plus-plus.css';
 	import { formatDate } from '$lib/posts';
 	export let data;
+
+	// <-escape so frontmatter text can never break out of the script tag.
+	$: jsonLd = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'BlogPosting',
+		headline: data.meta.title,
+		description: data.meta.description,
+		datePublished: data.meta.date,
+		url: `https://justfielding.com/blog/${data.slug}`,
+		...(data.meta.image ? { image: `https://justfielding.com${data.meta.image}` } : {}),
+		author: {
+			'@type': 'Person',
+			name: 'Fielding Johnston',
+			url: 'https://justfielding.com'
+		}
+	}).replace(/</g, '\\u003c');
 </script>
 
 <svelte:head>
-	<title>{data.meta.title} - Fielding Johnston</title>
+	<!-- Bare post title: the "- Fielding Johnston" suffix pushed long titles
+	     past what search results display; the brand rides og:site_name now. -->
+	<title>{data.meta.title}</title>
 	<meta name="description" content={data.meta.description} />
 	<meta name="author" content="Fielding Johnston" />
 	<meta property="og:title" content={data.meta.title} />
 	<meta property="og:description" content={data.meta.description} />
 	<meta property="og:type" content="article" />
 	<meta property="article:published_time" content={data.meta.date} />
-	<meta property="og:url" content="https://justfielding.com/blog/{data.slug}" />
+	{@html `<script type="application/ld+json">${jsonLd}${'<'}/script>`}
 	{#if data.meta.image}
 		<meta property="og:image" content="https://justfielding.com{data.meta.image}" />
 		<!-- Explicit dimensions let scrapers commit to the large-card layout on
