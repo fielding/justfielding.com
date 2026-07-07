@@ -1,6 +1,7 @@
 node_modules
 
 # Output
+/static/img/og/
 .output
 .vercel
 .netlify
