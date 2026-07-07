@@ -13,7 +13,13 @@
 	<meta property="og:url" content="https://justfielding.com/blog/{data.slug}" />
 	{#if data.meta.image}
 		<meta property="og:image" content="https://justfielding.com{data.meta.image}" />
+		<!-- Explicit dimensions let scrapers commit to the large-card layout on
+		     first share instead of falling back to a small thumbnail. -->
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Preview card for “{data.meta.title}”" />
 		<meta name="twitter:image" content="https://justfielding.com{data.meta.image}" />
+		<meta name="twitter:image:alt" content="Preview card for “{data.meta.title}”" />
 	{/if}
 	<meta name="twitter:card" content={data.meta.image ? 'summary_large_image' : 'summary'} />
 	<meta name="twitter:title" content={data.meta.title} />
@@ -38,14 +44,10 @@
 
 	<nav class="post-nav">
 		{#if data.prev}
-			<a href="/blog/{data.prev.slug}" class="prev glitched glitch-on-hover"
-				>← {data.prev.title}</a
-			>
+			<a href="/blog/{data.prev.slug}" class="prev glitched glitch-on-hover">← {data.prev.title}</a>
 		{/if}
 		{#if data.next}
-			<a href="/blog/{data.next.slug}" class="next glitched glitch-on-hover"
-				>{data.next.title} →</a
-			>
+			<a href="/blog/{data.next.slug}" class="next glitched glitch-on-hover">{data.next.title} →</a>
 		{/if}
 	</nav>
 </article>
@@ -313,5 +315,4 @@
 	.content :global(blockquote p:last-child) {
 		margin-bottom: 0;
 	}
-
 </style>
