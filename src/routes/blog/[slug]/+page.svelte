@@ -11,7 +11,11 @@
 	<meta property="og:description" content={data.meta.description} />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="https://justfielding.com/blog/{data.slug}" />
-	<meta name="twitter:card" content="summary" />
+	{#if data.meta.image}
+		<meta property="og:image" content="https://justfielding.com{data.meta.image}" />
+		<meta name="twitter:image" content="https://justfielding.com{data.meta.image}" />
+	{/if}
+	<meta name="twitter:card" content={data.meta.image ? 'summary_large_image' : 'summary'} />
 	<meta name="twitter:title" content={data.meta.title} />
 	<meta name="twitter:description" content={data.meta.description} />
 </svelte:head>
@@ -168,6 +172,32 @@
 		padding: 0;
 		border-radius: 0;
 		font-size: 0.9rem;
+	}
+
+	/* Figures from redstone.university ship on their own paper (the course
+	   design-system background) so the transparent renders read in both
+	   site themes. The caption sits below the plate, in the blog's own type. */
+	.content :global(.post-figure) {
+		margin: 1.75rem 0;
+	}
+
+	.content :global(.figure-plate) {
+		background: #f5f1ea;
+		border-radius: 8px;
+		padding: 1.25rem;
+	}
+
+	.content :global(.figure-plate img) {
+		display: block;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	.content :global(.post-figure figcaption) {
+		font-size: 0.85rem;
+		color: var(--subtle-text);
+		margin-top: 0.75rem;
+		line-height: 1.5;
 	}
 
 	.content :global(a) {
