@@ -6,6 +6,7 @@
 // only needs a re-run, not an image editor.
 
 import { readFile, readdir, writeFile, mkdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import satori from 'satori';
@@ -310,6 +311,10 @@ async function main() {
 
 	await mkdir(outDir, { recursive: true });
 
+	// Content hashes go into a manifest that posts.ts appends as ?v= on the
+	// og:image URL. Scrapers cache images by exact URL (LinkedIn held a stale
+	// card for days once), so a changed card must mean a changed URL.
+	const manifest = {};
 	const files = (await readdir(postsDir)).filter((f) => f.endsWith('.md'));
 	for (const file of files) {
 		const slug = file.replace(/\.md$/, '');
@@ -336,8 +341,14 @@ async function main() {
 
 		const png = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } }).render().asPng();
 		await writeFile(path.join(outDir, `${slug}.png`), png);
-		console.log(`wrote ${slug}.png`);
+		manifest[slug] = createHash('sha256').update(png).digest('hex').slice(0, 8);
+		console.log(`wrote ${slug}.png (v=${manifest[slug]})`);
 	}
+
+	await writeFile(
+		path.join(root, 'src', 'lib', 'og-manifest.json'),
+		JSON.stringify(manifest, null, '\t') + '\n'
+	);
 }
 
 main().catch((err) => {

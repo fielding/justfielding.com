@@ -2,6 +2,7 @@ node_modules
 
 # Output
 /static/img/og/
+/src/lib/og-manifest.json
 .output
 .vercel
 .netlify
