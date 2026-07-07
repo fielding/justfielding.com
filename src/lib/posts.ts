@@ -59,7 +59,9 @@ function buildMeta(path: string): PostMeta {
 		description: parsed.metadata?.description ?? '',
 		readingTime,
 		wordCount,
-		image: parsed.metadata?.image
+		// Posts without an explicit image get a card generated at build time
+		// by scripts/generate-og.mjs (wired as the npm prebuild step).
+		image: parsed.metadata?.image ?? `/img/og/${slug}.png`
 	};
 }
 
