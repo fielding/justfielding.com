@@ -130,7 +130,7 @@ async function loadCardImage(ref, hasLabel) {
 	// Contain within the plate's content box; the sticker eats some height,
 	// and the box leaves clearance so the plate shadow never reaches the
 	// bottom meta row.
-	const scale = Math.min(400 / width, (hasLabel ? 265 : 315) / height);
+	const scale = Math.min(470 / width, (hasLabel ? 310 : 360) / height);
 	return {
 		src: `data:image/png;base64,${buf.toString('base64')}`,
 		width: Math.round(width * scale),
@@ -197,7 +197,7 @@ function card({ title, description, date, minutes, image, label }) {
 			flexDirection: 'column',
 			position: 'relative',
 			backgroundColor: theme.background,
-			padding: '64px 72px',
+			padding: '52px 60px',
 			fontFamily: 'Titillium Web'
 		},
 		image ? null : fWatermark(),
@@ -223,7 +223,7 @@ function card({ title, description, date, minutes, image, label }) {
 					flexGrow: 1,
 					flexShrink: 1,
 					flexBasis: '0%',
-					paddingRight: image ? 56 : 0
+					paddingRight: image ? 48 : 0
 				},
 				h(
 					'div',
