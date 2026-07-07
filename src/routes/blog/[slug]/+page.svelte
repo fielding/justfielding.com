@@ -7,9 +7,11 @@
 <svelte:head>
 	<title>{data.meta.title} - Fielding Johnston</title>
 	<meta name="description" content={data.meta.description} />
+	<meta name="author" content="Fielding Johnston" />
 	<meta property="og:title" content={data.meta.title} />
 	<meta property="og:description" content={data.meta.description} />
 	<meta property="og:type" content="article" />
+	<meta property="article:published_time" content={data.meta.date} />
 	<meta property="og:url" content="https://justfielding.com/blog/{data.slug}" />
 	{#if data.meta.image}
 		<meta property="og:image" content="https://justfielding.com{data.meta.image}" />
