@@ -6,7 +6,8 @@ image: /img/blog/ru-og-card.png
 ---
 
 <figure class="post-figure">
-  <div class="figure-plate">
+  <div class="figure-plate hero">
+    <p class="plate-source">Redstone University</p>
     <img src="/img/blog/ru-complete-digital-display.png" alt="Render of Redstone University's complete digital display build: sepia ink linework, pastel height tints, and red powered redstone wires on warm parchment" />
   </div>
 </figure>
