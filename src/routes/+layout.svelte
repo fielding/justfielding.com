@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import { page } from '$app/stores';
 </script>
 
 <svelte:head>
@@ -18,7 +19,11 @@
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://justfielding.com" />
-	<meta property="og:image" content="https://justfielding.com/android-chrome-512x512.png" />
+	<!-- Pages that supply their own social image (blog posts with `image`
+	     frontmatter) win; scrapers take the first og:image they see. -->
+	{#if !$page.data?.meta?.image}
+		<meta property="og:image" content="https://justfielding.com/android-chrome-512x512.png" />
+	{/if}
 
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
