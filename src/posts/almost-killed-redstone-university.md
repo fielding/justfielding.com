@@ -2,7 +2,9 @@
 title: "I Almost Killed redstone.university Editing the Figures by Hand"
 date: '2026-07-06'
 description: "A data-driven figure pipeline for a CS course built inside Minecraft: every diagram and render generated from the circuit file and the game world, after hand-editing nearly ended the project."
-image: /img/blog/ru-og-card.png
+cardImage: /img/blog/ru-complete-digital-display.png
+cardLabel: Redstone University · rendered figure
+cardText: A CS course built inside Minecraft. The Magic School Bus pitch, pointed at a CPU instead of Arnold's colon.
 ---
 
 <figure class="post-figure">
