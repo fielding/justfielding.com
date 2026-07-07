@@ -208,6 +208,12 @@
 		margin-bottom: 0.9rem;
 	}
 
+	/* Separator between source and descriptor, echoing the post-meta dot. */
+	.content :global(.figure-plate .plate-source .dot) {
+		color: var(--accent);
+		font-weight: bold;
+	}
+
 	.content :global(.figure-plate img) {
 		display: block;
 		max-width: 100%;
