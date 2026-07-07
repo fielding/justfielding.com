@@ -339,7 +339,10 @@ async function main() {
 			{ width: 1200, height: 630, fonts }
 		);
 
-		const png = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } }).render().asPng();
+		// The layout is composed at 1200x630 but rendered at 2x: the SVG is
+		// vector, so this is free sharpness for scrapers' downscaled variants
+		// and retina feeds.
+		const png = new Resvg(svg, { fitTo: { mode: 'width', value: 2400 } }).render().asPng();
 		// Hash goes in the filename, not a query string: LinkedIn's media
 		// pipeline normalizes image URLs and ignores query params entirely.
 		const hash = createHash('sha256').update(png).digest('hex').slice(0, 8);

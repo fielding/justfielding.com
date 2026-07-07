@@ -35,8 +35,8 @@
 		<meta property="og:image" content="https://justfielding.com{data.meta.image}" />
 		<!-- Explicit dimensions let scrapers commit to the large-card layout on
 		     first share instead of falling back to a small thumbnail. -->
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
+		<meta property="og:image:width" content="2400" />
+		<meta property="og:image:height" content="1260" />
 		<meta property="og:image:alt" content="Preview card for “{data.meta.title}”" />
 		<meta name="twitter:image" content="https://justfielding.com{data.meta.image}" />
 		<meta name="twitter:image:alt" content="Preview card for “{data.meta.title}”" />
