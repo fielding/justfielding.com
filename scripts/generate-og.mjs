@@ -340,9 +340,12 @@ async function main() {
 		);
 
 		const png = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } }).render().asPng();
-		await writeFile(path.join(outDir, `${slug}.png`), png);
-		manifest[slug] = createHash('sha256').update(png).digest('hex').slice(0, 8);
-		console.log(`wrote ${slug}.png (v=${manifest[slug]})`);
+		// Hash goes in the filename, not a query string: LinkedIn's media
+		// pipeline normalizes image URLs and ignores query params entirely.
+		const hash = createHash('sha256').update(png).digest('hex').slice(0, 8);
+		await writeFile(path.join(outDir, `${slug}.${hash}.png`), png);
+		manifest[slug] = hash;
+		console.log(`wrote ${slug}.${hash}.png`);
 	}
 
 	await writeFile(
