@@ -31,6 +31,7 @@
 	<link rel="canonical" href="https://justfielding.com{$page.url.pathname}" />
 	<meta property="og:url" content="https://justfielding.com{$page.url.pathname}" />
 	<meta property="og:site_name" content="justfielding.com" />
+	<meta name="twitter:site" content="@justfielding" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:logo" content="https://justfielding.com/android-chrome-512x512.png" />
 

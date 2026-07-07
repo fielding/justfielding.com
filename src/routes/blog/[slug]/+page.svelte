@@ -42,6 +42,7 @@
 		<meta name="twitter:image:alt" content="Preview card for “{data.meta.title}”" />
 	{/if}
 	<meta name="twitter:card" content={data.meta.image ? 'summary_large_image' : 'summary'} />
+	<meta name="twitter:creator" content="@justfielding" />
 	<meta name="twitter:title" content={data.meta.title} />
 	<meta name="twitter:description" content={data.meta.description} />
 </svelte:head>
