@@ -7,6 +7,7 @@ export interface PostMeta {
 	description: string;
 	readingTime: number;
 	wordCount: number;
+	image?: string;
 }
 
 interface ParsedPost {
@@ -15,6 +16,7 @@ interface ParsedPost {
 		title?: string;
 		date?: string;
 		description?: string;
+		image?: string;
 	};
 }
 
@@ -56,7 +58,8 @@ function buildMeta(path: string): PostMeta {
 		date: parsed.metadata?.date ?? '',
 		description: parsed.metadata?.description ?? '',
 		readingTime,
-		wordCount
+		wordCount,
+		image: parsed.metadata?.image
 	};
 }
 

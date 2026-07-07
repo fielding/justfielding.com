@@ -11,7 +11,11 @@
 	<meta property="og:description" content={data.meta.description} />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="https://justfielding.com/blog/{data.slug}" />
-	<meta name="twitter:card" content="summary" />
+	{#if data.meta.image}
+		<meta property="og:image" content="https://justfielding.com{data.meta.image}" />
+		<meta name="twitter:image" content="https://justfielding.com{data.meta.image}" />
+	{/if}
+	<meta name="twitter:card" content={data.meta.image ? 'summary_large_image' : 'summary'} />
 	<meta name="twitter:title" content={data.meta.title} />
 	<meta name="twitter:description" content={data.meta.description} />
 </svelte:head>
