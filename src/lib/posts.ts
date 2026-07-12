@@ -43,8 +43,15 @@ function stripFrontmatter(raw: string): string {
 	return raw.replace(/^---[\s\S]*?---\n/, '');
 }
 
-function stripCodeBlocks(text: string): string {
-	return text.replace(/```[\s\S]*?```/g, '');
+// Reduce markdown to the prose a reader actually reads: drop fenced code,
+// HTML tags (their attributes carry alt text and class names, but element
+// text like figcaptions survives), image syntax, and link URLs.
+function stripMarkup(text: string): string {
+	return text
+		.replace(/```[\s\S]*?```/g, '')
+		.replace(/<[^>]+>/g, ' ')
+		.replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+		.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '$1');
 }
 
 function countWords(text: string): number {
@@ -56,7 +63,7 @@ function buildMeta(path: string): PostMeta {
 	const parsed = parsedPosts[path];
 	const raw = rawPosts[path] ?? '';
 
-	const body = stripCodeBlocks(stripFrontmatter(raw));
+	const body = stripMarkup(stripFrontmatter(raw));
 	const wordCount = countWords(body);
 	const readingTime = Math.max(1, Math.ceil(wordCount / 220));
 
