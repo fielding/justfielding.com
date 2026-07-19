@@ -29,3 +29,6 @@ vite.config.ts.timestamp-*
 
 # Tix
 .tix
+
+# personal drafts, not for public
+drafts/
