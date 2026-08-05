@@ -5,7 +5,7 @@
 	<p>
 		Hello, I'm Fielding Johnston. With over 15 years of experience, I specialize in building
 		scalable AI infrastructure, healthcare platforms, and distributed systems. Currently I'm
-		building a patient communications platform at Freed. I care deeply about AI adoption, not
+		building a privacy-first generative AI platform at Venice.ai. I care deeply about AI adoption, not
 		just shipping AI-powered products, but helping the teams around me get better at using AI
 		every day.
 	</p>
