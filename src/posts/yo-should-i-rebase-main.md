@@ -43,7 +43,7 @@ Every guided page plays itself on a loop like an arcade cabinet waiting for a qu
 
 My favorite command in there isn’t from git at all. Type `share` and you get a URL with your whole session encoded in it. Whoever opens the link watches your session replay from scratch, every command typed out character by character, on a loop, until they press a key. Then it’s theirs.
 
-<iframe src="https://git.redstone.university/playground?s=WyJnaXQgcmVtb3RlIGFkZCBvcmlnaW4iLCJnaXQgY29tbWl0IC1tIFwiYWRkIGxvZ2luIGZvcm1cIiIsInRlYW1tYXRlIGNvbW1pdCAtbSBcImJ1bXAgZGVwc1wiIiwiZ2l0IGZldGNoIiwiZ2l0IHB1bGwgLS1yZWJhc2UiXQ&embed" width="100%" height="470" style="border:1px solid #d9d4c8;border-radius:10px;background:#EFE7D2" title="a shared sandbox session replaying itself" loading="lazy"></iframe>
+<iframe src="https://git.redstone.university/playground?s=WyJnaXQgcmVtb3RlIGFkZCBvcmlnaW4iLCJnaXQgY29tbWl0IC1tIFwiYWRkIGxvZ2luIGZvcm1cIiIsInRlYW1tYXRlIGNvbW1pdCAtbSBcImJ1bXAgZGVwc1wiIiwiZ2l0IGZldGNoIiwiZ2l0IHB1bGwgLS1yZWJhc2UiXQ&embed&term" width="100%" height="640" style="border:1px solid #d9d4c8;border-radius:10px;background:#EFE7D2" title="a shared sandbox session replaying itself" loading="lazy"></iframe>
 
 *a shared session replaying itself: a teammate pushes while you have local commits, and `git pull --rebase` replays yours on top. It’s also the one time my friend’s question is accidentally the right one.*
 
