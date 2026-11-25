@@ -35,6 +35,7 @@
 
 	.media-column {
 		flex: 0 0 200px;
+		align-self: center;
 	}
 
 	.content-column {
@@ -70,8 +71,9 @@
 			flex-direction: column;
 		}
 		.media-column {
+			align-self: flex-start;
 			flex-basis: auto;
-			max-width: 100%;
+			max-width: 200px;
 		}
 	}
 </style>
