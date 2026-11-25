@@ -14,58 +14,27 @@
 
 <section id="now">
 	<SectionHeader id="now">Now</SectionHeader>
-	<p class="updated">As of March 2026</p>
+	<p class="updated">As of November 2026</p>
 
 	<p>
-		Code is no longer the bottleneck. That changes what's worth building. I've been circling around
-		four areas: highlighting human intent so it isn't lost, encoding constraints so they're enforced
-		automatically, empowering agents to build faster, and eliminating the review bottleneck
-		entirely.
+		Day job is Venice, a privacy-first generative AI platform. I built Anon Email, which keeps real
+		addresses out of third-party systems while mail still reaches your inbox, and these days I'm on
+		the team rewriting our inference infrastructure in Rust.
 	</p>
 	<p>
-		<a
-			href="https://github.com/fielding/human-plus-plus"
-			class="glitched glitch-on-hover"
-			target="_blank"
-			rel="noopener noreferrer">human++</a
+		After hours, <a href="https://selvwallet.com" class="glitched glitch-on-hover" target="_blank" rel="noopener noreferrer">SelvWallet</a> takes most of my time.
+		<a href="/blog/any-advice-on-building-a-crypto-wallet" class="glitched glitch-on-hover"
+			>I told a stranger on Telegram not to build a crypto wallet.</a
 		>
-		is a color scheme and editor extension built around the idea that code is cheap and intent is scarce.
-		<a
-			href="https://fielding.github.io/sigil/"
-			class="glitched glitch-on-hover"
-			target="_blank"
-			rel="noopener noreferrer">sigil</a
-		>
-		is still finding its shape, somewhere between ADRs and a knowledge graph.
-		<a
-			href="https://github.com/fielding/nit"
-			class="glitched glitch-on-hover"
-			target="_blank"
-			rel="noopener noreferrer">nit</a
-		>
-		makes what agents do cheaper.
-		<a
-			href="https://github.com/fielding/sprawl"
-			class="glitched glitch-on-hover"
-			target="_blank"
-			rel="noopener noreferrer">sprawl</a
-		>
-		lets them do it together.
-		<a
-			href="https://review.justfielding.com"
-			class="glitched glitch-on-hover"
-			target="_blank"
-			rel="noopener noreferrer">review-crew</a
-		>
-		has been a really successful experiment in multi-model adversarial code review. And
-		<a
-			href="https://youtu.be/Q0IEP5n8Mh4"
-			class="glitched glitch-on-hover"
-			target="_blank"
-			rel="noopener noreferrer">clipside</a
-		>
-		is a project built entirely by a team of agents (using most of the tools above) so I could watch
-		them work.
+		He built it anyway, I helped him rebuild it, and now I'm his cofounder.
+		<a href="https://redstone.university" class="glitched glitch-on-hover" target="_blank" rel="noopener noreferrer">Redstone University</a>, my computer
+		architecture course taught inside Minecraft, is waiting for me to get back to it.
+	</p>
+	<p>
+		The rest goes to tools for working with agents. Code is no longer the bottleneck, and that
+		changes what's worth building. I've been circling around four areas: highlighting human intent
+		so it isn't lost, encoding constraints so they're enforced automatically, empowering agents to
+		build faster, and eliminating the review bottleneck entirely.
 	</p>
 
 	{#if posts.length > 0}
