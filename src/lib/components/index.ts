@@ -1,6 +1,7 @@
 import Header from '$lib/components/Header.svelte';
 import ExperienceEntry from '$lib/components/ExperienceEntry.svelte';
 import ProjectEntry from '$lib/components/ProjectEntry.svelte';
+import ProjectList from '$lib/components/ProjectList.svelte';
 import PublicationEntry from '$lib/components/PublicationEntry.svelte';
 import SectionHeader from '$lib/components/SectionHeader.svelte';
 import GlitchEffect from '$lib/components/GlitchEffect.svelte';
@@ -10,6 +11,7 @@ export {
 	Header,
 	ExperienceEntry,
 	ProjectEntry,
+	ProjectList,
 	PublicationEntry,
 	SectionHeader,
 	GlitchEffect,
