@@ -284,6 +284,78 @@ function card({ title, description, date, minutes, image, label }) {
 	);
 }
 
+// The homepage's share card: same frame and tokens as the post cards, with
+// the wordmark as the headline instead of a post title.
+function homeCard() {
+	return h(
+		'div',
+		{
+			width: 1200,
+			height: 630,
+			display: 'flex',
+			flexDirection: 'column',
+			position: 'relative',
+			backgroundColor: theme.background,
+			padding: '52px 60px',
+			fontFamily: 'Titillium Web'
+		},
+		fWatermark(),
+		h(
+			'div',
+			{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flexGrow: 1 },
+			h(
+				'div',
+				{ display: 'flex', fontSize: 150, fontWeight: 900, lineHeight: 1 },
+				h('span', { color: theme.accent }, '.'),
+				h('span', { color: theme.text }, 'Fielding'),
+				h('span', { color: theme.accent }, '.')
+			),
+			h(
+				'div',
+				{
+					fontFamily: 'Inconsolata',
+					fontSize: 32,
+					color: theme.subtle,
+					lineHeight: 1.45,
+					marginTop: 28,
+					maxWidth: 900
+				},
+				deorphan(
+					'Principal Engineer at Venice. I build AI infrastructure, tools for working with agents, and side projects people use every day.'
+				)
+			)
+		),
+		h(
+			'div',
+			{ display: 'flex', fontFamily: 'Inconsolata', fontSize: 24 },
+			h(
+				'div',
+				{
+					backgroundColor: theme.accent,
+					color: '#ffffff',
+					fontWeight: 700,
+					letterSpacing: '0.14em',
+					padding: '8px 14px'
+				},
+				'JUSTFIELDING.COM'
+			)
+		)
+	);
+}
+
+// The layout is composed at 1200x630 but rendered at 2x: the SVG is vector,
+// so this is free sharpness for scrapers' downscaled variants and retina
+// feeds. The hash goes in the filename, not a query string: scrapers cache
+// images by exact URL, and LinkedIn's media pipeline ignores query params.
+async function renderCard(node, name, fonts) {
+	const svg = await satori(node, { width: 1200, height: 630, fonts });
+	const png = new Resvg(svg, { fitTo: { mode: 'width', value: 2400 } }).render().asPng();
+	const hash = createHash('sha256').update(png).digest('hex').slice(0, 8);
+	await writeFile(path.join(outDir, `${name}.${hash}.png`), png);
+	console.log(`wrote ${name}.${hash}.png`);
+	return hash;
+}
+
 async function main() {
 	theme = await loadTheme();
 	const fonts = [
@@ -315,6 +387,8 @@ async function main() {
 	// og:image URL. Scrapers cache images by exact URL (LinkedIn held a stale
 	// card for days once), so a changed card must mean a changed URL.
 	const manifest = {};
+	// "/" can never collide with a post slug.
+	manifest['/'] = await renderCard(homeCard(), 'home', fonts);
 	const files = (await readdir(postsDir)).filter((f) => f.endsWith('.md'));
 	for (const file of files) {
 		const slug = file.replace(/\.md$/, '');
@@ -325,7 +399,7 @@ async function main() {
 			continue;
 		}
 
-		const svg = await satori(
+		manifest[slug] = await renderCard(
 			card({
 				title: meta.title ?? slug,
 				// cardText overrides description: card copy is a 150-char window,
@@ -336,19 +410,9 @@ async function main() {
 				image: meta.cardImage ? await loadCardImage(meta.cardImage, Boolean(meta.cardLabel)) : null,
 				label: meta.cardLabel
 			}),
-			{ width: 1200, height: 630, fonts }
+			slug,
+			fonts
 		);
-
-		// The layout is composed at 1200x630 but rendered at 2x: the SVG is
-		// vector, so this is free sharpness for scrapers' downscaled variants
-		// and retina feeds.
-		const png = new Resvg(svg, { fitTo: { mode: 'width', value: 2400 } }).render().asPng();
-		// Hash goes in the filename, not a query string: LinkedIn's media
-		// pipeline normalizes image URLs and ignores query params entirely.
-		const hash = createHash('sha256').update(png).digest('hex').slice(0, 8);
-		await writeFile(path.join(outDir, `${slug}.${hash}.png`), png);
-		manifest[slug] = hash;
-		console.log(`wrote ${slug}.${hash}.png`);
 	}
 
 	await writeFile(

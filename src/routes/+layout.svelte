@@ -1,6 +1,10 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores';
+	import ogManifest from '$lib/og-manifest.json';
+
+	// Pages without their own card (home, blog index) share the homepage card.
+	const defaultOgImage = `https://justfielding.com/img/og/home.${ogManifest['/']}.png`;
 </script>
 
 <svelte:head>
@@ -26,7 +30,13 @@
 		<meta property="og:type" content="website" />
 	{/if}
 	{#if !$page.data?.meta?.image}
-		<meta property="og:image" content="https://justfielding.com/android-chrome-512x512.png" />
+		<meta property="og:image" content={defaultOgImage} />
+		<meta property="og:image:width" content="2400" />
+		<meta property="og:image:height" content="1260" />
+	{/if}
+	{#if !$page.data?.meta}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content={defaultOgImage} />
 	{/if}
 	<link rel="canonical" href="https://justfielding.com{$page.url.pathname}" />
 	<meta property="og:url" content="https://justfielding.com{$page.url.pathname}" />
